@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' , href="css/daily.css")
+        title Document
+    body(style=`text-align: center;`)
+        div
+            a(href="/main") Home
+            h1 제목 : #{daily.title}
+        div(style=`background-image:url(${daily.photo});background-size:cover;background-position:center;width:30%;height:50vh;`)
+        span #{daily.content}

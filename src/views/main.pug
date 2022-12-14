@@ -10,6 +10,19 @@ html(lang="en")
     body
         a(href="/")
             h1 나만의 일기장    
-        div
-            a(href="/login") 로그인 
-            a(href="/logout") 로그아웃
+        div#header
+            if loggedIn
+                a(href="/diary") 일기등록   
+                a(href="/logout") 로그아웃  
+
+                       
+            else
+                a(href="/") 로그인
+                
+        if allDiary 
+            div#allDiary
+                each diary in allDiary
+                    div#diary
+                        a(href=`/diary/${diary._id}`)
+                            div#img(style=`background-image:url(${diary.photo});background-size:cover;background-position:center;`)
+                            p #{diary.title}   

@@ -9,7 +9,7 @@ import { localsMiddleware } from "./middlewares.js";
 import "./db.js";
 
 dotenv.config();
-
+console.log(process.env);
 const app = express();
 
 app.set("view engine", "pug");
@@ -28,7 +28,7 @@ app.use(
 );
 
 app.use(localsMiddleware);
-app.use("/uploads", express.static("uploads"));
+app.use("/upload", express.static("upload"));
 app.use("/css", express.static(path.join(process.cwd(), "src/public/css")));
 app.use("/", globalRouter);
 app.use("/diary", diaryRouter);

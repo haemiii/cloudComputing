@@ -1,0 +1,10 @@
+body {
+  height: 100vh;
+  background-color: aqua;
+  text-align: center;
+}
+
+div {
+  height: 50vh;
+  width: 50%;
+}
