@@ -12,7 +12,7 @@ export const getDiary = async (req, res) => {
 };
 export const register = async (req, res) => {
   const { title, content, photo } = req.body;
-  const { path } = req.file;
+  const { location } = req.file;
   const { _id } = req.session.user;
   console.log(req.body);
   console.log("photoUrl", photo);
@@ -22,7 +22,7 @@ export const register = async (req, res) => {
     const newDiary = await Diary.create({
       title,
       content,
-      photo: path,
+      photo: location,
       owner: _id,
     });
   } catch (err) {

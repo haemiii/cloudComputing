@@ -4,11 +4,11 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel='stylesheet' , href="css/daily.css")
+        link(rel='stylesheet' , href="/css/daily.css")
         title Document
-    body(style=`text-align: center;`)
-        div
+    body
+        div#header
             a(href="/main") Home
             h1 제목 : #{daily.title}
-        div(style=`background-image:url(${daily.photo});background-size:cover;background-position:center;width:30%;height:50vh;`)
-        span #{daily.content}
+        img(src=`${daily.photo}`)
+        div#content #{daily.content}
