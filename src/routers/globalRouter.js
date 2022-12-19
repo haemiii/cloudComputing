@@ -11,6 +11,8 @@ import {
 
 const globalRouter = express.Router();
 
+//유저에 관한 api 집합체
+
 globalRouter.get("/main", main);
 globalRouter.route("/join").get(getJoin).post(postJoin);
 globalRouter.route("/").get(getLogin).post(postLogin);

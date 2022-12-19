@@ -9,15 +9,16 @@ import { localsMiddleware } from "./middlewares.js";
 import "./db.js";
 
 dotenv.config();
-console.log(process.env);
 const app = express();
 
+//frontend로 pug 사용
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//session 설정
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
@@ -30,6 +31,7 @@ app.use(
 app.use(localsMiddleware);
 app.use("/upload", express.static("upload"));
 app.use("/css", express.static(path.join(process.cwd(), "src/public/css")));
+
 app.use("/", globalRouter);
 app.use("/diary", diaryRouter);
 
